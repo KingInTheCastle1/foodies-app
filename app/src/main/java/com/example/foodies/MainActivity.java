@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.prefSettings) {
-            Navigation.findNavController(this,R.id.nav_host_fragment_content_main).navigate(R.id.action_FirstFragment_to_PreferencesFragment);
+            Navigation.findNavController(this,R.id.nav_host_fragment_content_main).navigate(R.id.action_toPreferencesFragment);
         }
 
         return super.onOptionsItemSelected(item);

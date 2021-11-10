@@ -15,8 +15,8 @@
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
         <action
-            android:id="@+id/action_FirstFragment_to_PreferencesFragment"
-            app:destination="@id/PreferencesFragment" />
+            android:id="@+id/action_FirstFragment_to_ListFragment"
+            app:destination="@id/ListFragment"/>
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -33,9 +33,16 @@
         android:name="com.example.foodies.PreferencesFragment"
         android:label="@string/preferences_fragment_label"
         tools:layout="@layout/fragment_preferences">
-
-        <action
-            android:id="@+id/action_PreferencesFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/ListFragment"
+        android:name="com.example.foodies.ListFragment"
+        android:label="@string/list_fragment_label"
+        tools:layout="@layout/fragment_list">
+    </fragment>
+
+    <action
+        android:id="@+id/action_toPreferencesFragment"
+        app:destination="@id/PreferencesFragment"/>
+
 </navigation>

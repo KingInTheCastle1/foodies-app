@@ -8,20 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.foodies.databinding.FragmentPreferencesBinding;
+import com.example.foodies.databinding.FragmentListBinding;
 
-public class PreferencesFragment extends Fragment {
-    private FragmentPreferencesBinding binding;
+public class ListFragment extends Fragment {
+
+    private FragmentListBinding binding;
 
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState
-    ) {
+    ){
 
-        binding = FragmentPreferencesBinding.inflate(inflater, container, false);
+        binding = FragmentListBinding.inflate(inflater, container, false);
         return binding.getRoot();
-
     }
 
     @Override
