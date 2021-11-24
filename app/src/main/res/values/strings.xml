@@ -9,7 +9,7 @@
     <string name="list_fragment_label">Full List</string>
 
     <!-- Strings used for fragments for buttons -->
-    <string name="recommendation1">Recommendation: Preferences</string>
+    <string name="recommendation1">Random Recommendation</string>
     <string name="recommendation2">Recommendation: Specific Food</string>
     <string name="list">Full List</string>
     <string name="next">Next</string>
