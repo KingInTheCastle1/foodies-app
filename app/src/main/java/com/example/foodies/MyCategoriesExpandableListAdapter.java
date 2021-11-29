@@ -9,6 +9,8 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+import com.example.foodies.*;
 
 import androidx.collection.CircularArray;
 
@@ -105,11 +107,12 @@ public class MyCategoriesExpandableListAdapter extends BaseExpandableListAdapter
         final ViewHolderChild viewHolderChild;
         child = childItems.get(groupPosition).get(childPosition);
 
+
         if (convertView == null) {
             convertView = inflater.inflate(R.layout.list_item, null);
             viewHolderChild = new ViewHolderChild();
 
-            viewHolderChild.SubCategoryName = convertView.findViewById(R.id.tvSubCategoryName);
+            viewHolderChild.SubCategoryName = convertView.findViewById(R.id.SubCategoryName);
             viewHolderChild.cbSubCategory = convertView.findViewById(R.id.cbSubCategory);
             viewHolderChild.viewDivider = convertView.findViewById(R.id.viewDivider);
             convertView.setTag(viewHolderChild);
@@ -132,10 +135,26 @@ public class MyCategoriesExpandableListAdapter extends BaseExpandableListAdapter
                 if (viewHolderChild.cbSubCategory.isChecked()) {
                     count = 0;
                     childItems.get(groupPosition).get(childPosition).put(ConstantManager.Parameter.IS_CHECKED, ConstantManager.CHECK_BOX_CHECKED_TRUE);
+
+                    if(groupPosition == 0 || groupPosition == 2){
+                        for(int i = 0; i < childItems.get(groupPosition).size(); i++){
+                            if(i != childPosition){
+                                childItems.get(groupPosition).get(i).put(ConstantManager.Parameter.IS_CHECKED, ConstantManager.CHECK_BOX_CHECKED_FALSE);
+                                viewHolderChild.cbSubCategory.setChecked(false);
+                            }
+                        }
+                    }
+
+                    Toast.makeText(activity.getApplicationContext(), viewHolderChild.SubCategoryName.getText(), Toast.LENGTH_SHORT).show();
+
                     notifyDataSetChanged();
                 } else {
                     count = 0;
                     childItems.get(groupPosition).get(childPosition).put(ConstantManager.Parameter.IS_CHECKED, ConstantManager.CHECK_BOX_CHECKED_FALSE);
+
+
+                    Toast.makeText(activity.getApplicationContext(), viewHolderChild.SubCategoryName.getText(), Toast.LENGTH_SHORT).show();
+
                     notifyDataSetChanged();
                 }
 

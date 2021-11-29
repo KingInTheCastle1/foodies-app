@@ -16,7 +16,7 @@
             android:layout_weight="1">
 
             <TextView
-                android:id="@+id/tvSubCategoryName"
+                android:id="@+id/SubCategoryName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="50dp"

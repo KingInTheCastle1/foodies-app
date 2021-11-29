@@ -10,7 +10,7 @@
 
     <!-- Strings used for fragments for buttons -->
     <string name="recommendation1">Random Recommendation</string>
-    <string name="recommendation2">Recommendation: Specific Food</string>
+    <string name="recommendation2">Recommendation: Preferences</string>
     <string name="list">Full List</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>

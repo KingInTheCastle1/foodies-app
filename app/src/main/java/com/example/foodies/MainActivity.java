@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
         distance_ = findViewById(R.id.distance);
         typeArr_ = findViewById(R.id.typeArr);
 
+
+
+
+
+
         query_button.setOnClickListener(new View.OnClickListener()
         {
 
