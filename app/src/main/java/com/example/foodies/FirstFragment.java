@@ -1,5 +1,6 @@
 package com.example.foodies;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +38,15 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
+
+                // create instance of db access class & open db
+                DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getActivity().getApplicationContext());
+                databaseAccess.open();
+
+                // hit db for random data
+                dbData myDBData[] = databaseAccess.getRandomData();
+
+                databaseAccess.close();
             }
         });
 
@@ -45,6 +55,22 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_SecondFragment);
+
+                // create instance of db access class & open db
+                DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getActivity().getApplicationContext());
+                databaseAccess.open();
+
+                // get string from EditText
+                dbData myDBData = databaseAccess.getSortedData(prefMaster);
+
+                // put data from db into result field (will be new page)
+                String restName = myDBData.restName;
+                int price = myDBData.price;
+                String tagline = myDBData.tagline;
+                int distance_ = myDBData.distance;
+                String typeArr = myDBData.typeArr;
+
+                databaseAccess.close();
             }
         });
 

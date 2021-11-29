@@ -77,6 +77,59 @@ public class DatabaseAccess
         return newDBData;
     }
 
+    // return array of 3 random restaurants from db
+    public dbData[] getRandomData()
+    {
+        // obj array to return at the end
+        dbData objArray[] = new dbData[3];
+
+        String[] options = new String[3];
+        options[0] = "Asian";
+        options[1] = "Mexican/Hispanic";
+        options[2] = "Seafood";
+
+        for(int i = 0; i < 3; i++)
+        {
+            // query the db
+            c = db.rawQuery("select restName, price, tagline, distance, typeArr from restList where typeArr = '" + options[i] + "' order by random()", new String[]{});
+
+            String restName = "";
+            int price = -1;
+            String tagline = "";
+            int distance = -1;
+            String typeArr = "";
+
+            // some horseshit right here
+            while(c.moveToNext())
+            {
+                restName = c.getString(0);
+                price = c.getShort(1);
+                tagline = c.getString(2);
+                distance = c.getShort(3);
+                typeArr = c.getString(4);
+            }
+
+            // data object to return
+            dbData newDBData = new dbData(
+                    restName, // restaurant name
+                    price, // price
+                    tagline, // tagline
+                    distance, // distance
+                    typeArr // typeArr
+            );
+
+            System.out.println(newDBData.restName);
+            System.out.println(newDBData.price);
+            System.out.println(newDBData.tagline);
+            System.out.println(newDBData.distance);
+            System.out.println(newDBData.typeArr);
+
+            objArray[i] = newDBData; // append to object array
+        }
+
+        return objArray;
+    }
+
     // return array of objects from db according to the preferences
     public dbData getSortedData(PreferenceObj preference)
     {

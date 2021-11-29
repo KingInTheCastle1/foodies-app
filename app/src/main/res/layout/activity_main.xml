@@ -32,7 +32,7 @@
         android:id="@+id/query_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I swear if this breaks again" />
+        android:text="Find Restaurant" />
 
     <TextView
         android:id="@+id/restName"
