@@ -48,22 +48,22 @@ public class PreferenceObj {
         this.restName = "";
         this.price = 1;
         this.distance = 0;
-        this.asian = false;
-        this.cafe = false;
-        this.mexicanHispanic = false;
-        this.fastFood = false;
-        this.pizza = false;
-        this.italian = false;
-        this.sandwiches = false;
-        this.burgers = false;
-        this.dessert = false;
-        this.chickenWings = false;
-        this.american = false;
-        this.bar = false;
-        this.foreign = false;
-        this.seafood = false;
-        this.bakery = false;
-        this.other = false;
+        this.asian = true;
+        this.cafe = true;
+        this.mexicanHispanic = true;
+        this.fastFood = true;
+        this.pizza = true;
+        this.italian = true;
+        this.sandwiches = true;
+        this.burgers = true;
+        this.dessert = true;
+        this.chickenWings = true;
+        this.american = true;
+        this.bar = true;
+        this.foreign = true;
+        this.seafood = true;
+        this.bakery = true;
+        this.other = true;
     }
 
     public void setReset() {

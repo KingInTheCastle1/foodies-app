@@ -24,4 +24,24 @@ public class dbData
         this.distance = distance;
         this.typeArr = typeArr;
     }
+
+    public String getRestName() {
+        return restName;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getDistance() {
+        return distance;
+    }
+
+    public String getTypeArr() {
+        return typeArr;
+    }
+
+    public String getTagline() {
+        return tagline;
+    }
 }

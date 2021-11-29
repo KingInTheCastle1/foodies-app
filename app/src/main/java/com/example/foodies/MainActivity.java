@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     public TextView distance_;
     public TextView typeArr_;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

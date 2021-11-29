@@ -15,6 +15,8 @@ import com.example.foodies.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+    public static PreferenceObj prefMaster = new PreferenceObj();
+    public static dbData[] myDBData;
 
     @Override
     public View onCreateView(
@@ -44,7 +46,7 @@ public class FirstFragment extends Fragment {
                 databaseAccess.open();
 
                 // hit db for random data
-                dbData myDBData[] = databaseAccess.getRandomData();
+                myDBData = databaseAccess.getRandomData();
 
                 databaseAccess.close();
             }

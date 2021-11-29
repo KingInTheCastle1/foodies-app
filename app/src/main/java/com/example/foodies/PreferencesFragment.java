@@ -55,6 +55,8 @@ public class PreferencesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState){
 
             setupFilters();
+            PreferenceObj a = FirstFragment.prefMaster;
+            a = FirstFragment.prefMaster;
     }
 
     private void setupFilters() {
@@ -163,13 +165,13 @@ public class PreferencesFragment extends Fragment {
             dataItem = new DataItem("3", "Distance");
 
             SubCategoryItem dist1 = new SubCategoryItem("1", "0 miles");
-            dist1.setIsChecked(ConstantManager.CHECK_BOX_CHECKED_FALSE);
+            dist1.setIsChecked(ConstantManager.CHECK_BOX_CHECKED_TRUE);
 
             SubCategoryItem dist2 = new SubCategoryItem("2", "≤ 1 mile");
             dist2.setIsChecked(ConstantManager.CHECK_BOX_CHECKED_FALSE);
 
             SubCategoryItem dist3 = new SubCategoryItem("3", "≤ 2 miles");
-            dist3.setIsChecked(ConstantManager.CHECK_BOX_CHECKED_TRUE);
+            dist3.setIsChecked(ConstantManager.CHECK_BOX_CHECKED_FALSE);
 
             arSubCategory = new ArrayList<>();
             arSubCategory.add(dist1);
@@ -221,6 +223,7 @@ public class PreferencesFragment extends Fragment {
             myCategoriesExpandableListAdapter = new MyCategoriesExpandableListAdapter(getActivity(),
                     parentItems, childItems, false);
             lvCategory.setAdapter(myCategoriesExpandableListAdapter);
+
 
     }
 
