@@ -79,6 +79,15 @@ public class FirstFragment extends Fragment {
             public void onClick(View view) {
                 NavHostFragment.findNavController(FirstFragment.this)
                         .navigate(R.id.action_FirstFragment_to_ListFragment);
+
+                // create instance of db access class & open db
+                DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getActivity().getApplicationContext());
+                databaseAccess.open();
+
+                // hit db for all data
+                dbData myDBData[] = databaseAccess.getAllData();
+
+                databaseAccess.close();
             }
         });
     }
