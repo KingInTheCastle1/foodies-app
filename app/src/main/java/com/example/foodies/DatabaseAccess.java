@@ -74,13 +74,58 @@ public class DatabaseAccess
             typeArr // typeArr
         );
 
-        /*
-        System.out.println(newDBData.restName);
-        System.out.println(newDBData.price);
-        System.out.println(newDBData.tagline);
-        System.out.println(newDBData.distance);
-        System.out.println(newDBData.typeArr);
-         */
+        return newDBData;
+    }
+
+    // return array of objects from db according to the preferences
+    public dbData getSortedData(PreferenceObj preference)
+    {
+        String name = preference.getRestName();
+        int price = preference.getPrice();
+        int distance = preference.getDistance();
+        boolean asian = preference.isAsian();
+        boolean isCafe = preference.isCafe();
+        boolean isMexicanHispanic = preference.isMexicanHispanic();
+        boolean isFastFood = preference.isFastFood();
+        boolean isPizza = preference.isPizza();
+        boolean isItalian = preference.isItalian();
+        boolean isSandwiches = preference.isSandwiches();
+        boolean isBurgers = preference.isBurgers();
+        boolean isDessert = preference.isDessert();
+        boolean isChickenWings = preference.isChickenWings();
+        boolean isAmerican = preference.isAmerican();
+        boolean isBar = preference.isBar();
+        boolean isForeign = preference.isForeign();
+        boolean isSeafood = preference.isSeafood();
+        boolean isBakery = preference.isBakery();
+        boolean isOther = preference.isOther();
+
+        // call db with the appropriate filters
+        c = db.rawQuery("select price, tagline, distance, typeArr from restList where restName = '" + name + "'", new String[]{});
+
+        String tagline = "";
+        String typeArr = "";
+
+        // some horseshit right here
+        while(c.moveToNext())
+        {
+            price = c.getShort(0);
+            tagline = c.getString(1);
+            distance = c.getShort(2);
+            typeArr = c.getString(3);
+        }
+
+        // data object to return
+        dbData newDBData = new dbData(
+            name, // restaurant name
+            price, // price
+            tagline, // tagline
+            distance, // distance
+            typeArr // typeArr
+        );
+
         return newDBData;
     }
 }
+
+

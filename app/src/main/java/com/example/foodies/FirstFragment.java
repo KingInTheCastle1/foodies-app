@@ -29,8 +29,8 @@ public class FirstFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
+        // preference object to be passed to db call
+        PreferenceObj prefMaster = new PreferenceObj();
 
         binding.prefButton.setOnClickListener(new View.OnClickListener() {
             @Override

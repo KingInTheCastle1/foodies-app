@@ -2,6 +2,7 @@ package com.example.foodies;
 
 public class PreferenceObj {
 
+    private String restName;
     private int price;
     private int distance;
     private boolean asian;
@@ -21,7 +22,8 @@ public class PreferenceObj {
     private boolean bakery;
     private boolean other;
 
-    public PreferenceObj(int price, int distance, boolean asian, boolean cafe, boolean mexicanHispanic, boolean fastFood, boolean pizza, boolean italian, boolean sandwiches, boolean burgers, boolean dessert, boolean chickenWings, boolean american, boolean bar, boolean foreign, boolean seafood, boolean bakery, boolean other) {
+    public PreferenceObj(String restName, int price, int distance, boolean asian, boolean cafe, boolean mexicanHispanic, boolean fastFood, boolean pizza, boolean italian, boolean sandwiches, boolean burgers, boolean dessert, boolean chickenWings, boolean american, boolean bar, boolean foreign, boolean seafood, boolean bakery, boolean other) {
+        this.restName = restName;
         this.price = price;
         this.distance = distance;
         this.asian = asian;
@@ -43,6 +45,7 @@ public class PreferenceObj {
     }
 
     public PreferenceObj() {
+        this.restName = "";
         this.price = 1;
         this.distance = 0;
         this.asian = false;
@@ -64,6 +67,7 @@ public class PreferenceObj {
     }
 
     public void setReset() {
+        this.restName = "";
         this.price = 1;
         this.distance = 0;
         this.asian = false;
@@ -82,6 +86,13 @@ public class PreferenceObj {
         this.seafood = false;
         this.bakery = false;
         this.other = false;
+    }
+    public String getRestName() {
+        return restName;
+    }
+
+    public void setRestName(String restName) {
+        this.restName = restName;
     }
 
     public int getPrice() {

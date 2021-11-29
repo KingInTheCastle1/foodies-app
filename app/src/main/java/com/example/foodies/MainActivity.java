@@ -61,11 +61,6 @@ public class MainActivity extends AppCompatActivity {
         distance_ = findViewById(R.id.distance);
         typeArr_ = findViewById(R.id.typeArr);
 
-
-
-
-
-
         query_button.setOnClickListener(new View.OnClickListener()
         {
 
@@ -91,8 +86,6 @@ public class MainActivity extends AppCompatActivity {
                 databaseAccess.close();
             }
         });
-
-        PreferenceObj prefMaster = new PreferenceObj();
 
     }
 
