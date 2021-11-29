@@ -10,10 +10,12 @@
         <entry key="..\:/Users/Juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/fragment_preferences.xml" value="0.4765625" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/fragment_second.xml" value="0.5" />
         <entry key="..\:/Users/Juan/AndroidStudioProjects/foodies-app/app/src/main/res/menu/menu_main.xml" value="0.5385416666666667" />
+        <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/activity_checked.xml" value="0.25" />
         <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/fragment_first.xml" value="0.35104166666666664" />
         <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/fragment_preferences.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/group_choose_categories.xml" value="0.1" />
         <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/list_group.xml" value="0.20572916666666666" />
-        <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/list_item.xml" value="0.20572916666666666" />
+        <entry key="..\:/Users/juan/AndroidStudioProjects/foodies-app/app/src/main/res/layout/list_item.xml" value="0.5" />
       </map>
     </option>
   </component>
