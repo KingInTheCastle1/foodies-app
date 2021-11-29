@@ -20,10 +20,23 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.widget.EditText;
+import android.widget.Button;
+import android.widget.TextView;
+
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    // db variables
+    public EditText name;
+    public Button query_button;
+    public TextView restName_;
+    public TextView price_;
+    public TextView tagline_;
+    public TextView distance_;
+    public TextView typeArr_;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +51,41 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+        // db info
+        name = findViewById(R.id.name);
+        query_button = findViewById(R.id.query_button);
+        restName_ = findViewById(R.id.restName);
+        price_ = findViewById(R.id.price);
+        tagline_ = findViewById(R.id.tagline);
+        distance_ = findViewById(R.id.distance);
+        typeArr_ = findViewById(R.id.typeArr);
+
+        query_button.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View view)
+            {
+
+                // create instance of db access class & open db
+                DatabaseAccess databaseAccess = DatabaseAccess.getInstance(getApplicationContext());
+                databaseAccess.open();
+
+                // get string from EditText
+                String n = name.getText().toString();
+                dbData myDBData = databaseAccess.getData(n);
+
+                // put data from db into result field (will be new page)
+                restName_.setText(String.valueOf(myDBData.restName));
+                price_.setText(String.valueOf(myDBData.price));
+                tagline_.setText(String.valueOf(myDBData.tagline));
+                distance_.setText(String.valueOf(myDBData.distance));
+                typeArr_.setText(String.valueOf(myDBData.typeArr));
+
+                databaseAccess.close();
+            }
+        });
 
         PreferenceObj prefMaster = new PreferenceObj();
 
