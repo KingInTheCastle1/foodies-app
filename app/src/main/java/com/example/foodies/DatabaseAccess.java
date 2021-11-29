@@ -118,11 +118,11 @@ public class DatabaseAccess
                     typeArr // typeArr
             );
 
-            System.out.println(newDBData.restName);
-            System.out.println(newDBData.price);
-            System.out.println(newDBData.tagline);
-            System.out.println(newDBData.distance);
-            System.out.println(newDBData.typeArr);
+            System.out.println("Name: " + newDBData.restName);
+            System.out.println("Price: " + newDBData.price);
+            System.out.println("Tagline: " + newDBData.tagline);
+            System.out.println("Distance: " + newDBData.distance);
+            System.out.println("typeArr: " + newDBData.typeArr);
 
             objArray[i] = newDBData; // append to object array
         }
@@ -187,10 +187,10 @@ public class DatabaseAccess
         dbData objArray[] = new dbData[108]; // hardcoded b/c fuck it
 
         // better way to do it
-        c = db.rawQuery("select restName, price, tagline, distance, typeArr from restList", new String[]{});
-
-        for(int i = 0; i > 107; i++)
+        c = db.rawQuery("select restName, price, tagline, distance, typeArr from restList", null);
+        for(int i = 0; i < 107; i++)
         {
+            System.out.println(i);
             String restName = "";
             int price = -1;
             String tagline = "";
@@ -216,11 +216,11 @@ public class DatabaseAccess
                 typeArr // typeArr
             );
 
-            System.out.println(newDBData.restName);
-            System.out.println(newDBData.price);
-            System.out.println(newDBData.tagline);
-            System.out.println(newDBData.distance);
-            System.out.println(newDBData.typeArr);
+            System.out.println("Name: " + newDBData.restName);
+            System.out.println("Price: " + newDBData.price);
+            System.out.println("Tagline: " + newDBData.tagline);
+            System.out.println("Distance: " + newDBData.distance);
+            System.out.println("typeArr: " + newDBData.typeArr);
 
             objArray[i] = newDBData; // append to object array
         }
